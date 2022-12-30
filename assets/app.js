@@ -9,9 +9,9 @@
 import './styles/app.scss';
 
 // You can specify which pligins you need
-//import { Tooltip, Toast, Popover } from 'bootstrap'; // remplacé par ce qui suit
+import { Tooltip, Toast, Popover } from 'bootstrap'; // remplacé par ce qui suit
 
-import $ from 'jquery';
+/* import $ from 'jquery';
 // this "modifies" the jquery module: adding behavior to it
 // the bootstrap module doesn't export/return anything
 require('bootstrap');
@@ -22,7 +22,10 @@ require('bootstrap/js/dist/popover');
 
 $(document).ready(function () {
     $('[data-toggle="popover"]').popover();
-});
+}); */
+
+import './js/main';
 
 // start the Stimulus application
 import './bootstrap';
+

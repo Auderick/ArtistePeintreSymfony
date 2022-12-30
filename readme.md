@@ -11,6 +11,7 @@ Peinture est un site internet permettant à un artiste peintre de publier ses oe
 * Symfony CLI
 * Docker
 * Docker-compose
+* nodejs et npm
 
 Vous pouvez vérifier le pré-requiq (sauf Docker et Docker-compose) avec la commande suivante (de la CLI Symfony) :
 
@@ -21,6 +22,9 @@ symfony check:requirements
 ### Lancer l'environnement de développement
 
 ```bash
+comoser install
+npm install
+npm run build
 docker-compose up -d
 symfony server:start
 ```
