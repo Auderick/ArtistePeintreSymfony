@@ -298,3 +298,48 @@
         background-size: cover;
     }
 }
+
+/* Animations page accueil "réalisations"  */
+.reveal-loaded .reveal {
+    opacity: 0;
+    transform: transition(-30px);
+}
+.reveal-loaded .reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: .5s cubic-bezier(.5, 0, 0, 1);
+}
+.reveal-loaded #slidein {
+    animation-duration: 8s;
+    animation-name: slidein;
+}
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+/* Animations page accueil "blogpost" */
+
+#slide-in {
+    animation-duration: 1s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+    from {
+        margin-bottom: 100%;
+        width: 300%;
+    }
+
+    to {
+        margin-bottom: 0%;
+        width: 100%;
+    }
+}
+ 
