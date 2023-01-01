@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+        <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+        <title>
+            Login
+                                      
+                                
+                    
+        </title>
+        <!--     Fonts and icons     -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+        <!-- Nucleo Icons -->
+        <link href="./css/nucleo-icons.css" rel="stylesheet" />
+        <link href="./css/nucleo-svg.css" rel="stylesheet" />
+        <!-- Font Awesome Icons -->
+        <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+        <link href="./css/nucleo-svg.css" rel="stylesheet" />
+        <!-- CSS Files -->
+        <link id="pagestyle" href="./css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
+    </head>
+    <body>
+        <main class="main-content  mt-0">
+            <section>
+                <div class="page-header min-vh-100">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
+                                <div class="card card-plain mt-8">
+                                    <div class="card-header pb-0 text-left bg-transparent">
+                                        <h3 class="font-weight-bolder text-info text-gradient">
+                                            Ouvrir une session
+                                                                                                                        
+                                                                                    
+                                        </h3>
+                                        <p class="mb-0">
+                                            Administration du site
+                                                                                                                        
+                                                                                    
+                                        </p>
+                                    </div>
+                                    <form method="post">
+                                        {% if error %}
+                                            <div class="alert alert-danger">
+                                                {{ error.messageKey|trans(error.messageData, 'security') }}
+                                            </div>
+                                        {% endif %}
+
+                                        {% if app.user %}
+                                            <div class="mb-3">
+                                                You are logged in as 
+                                                            
+                                                {{ app.user.userIdentifier }}
+                                                , 
+                                                            
+                                                <a href="{{ path('app_logout') }}">
+                                                    Logout
+                                                                
+                                                </a>
+                                            </div>
+                                        {% endif %}
+
+                                        <h1 class="h3 mb-3 font-weight-normal">
+                                            Veuillez vous connecter
+                                                
+                                        </h1>
+                                        <label for="inputEmail">
+                                            Email
+                                                
+                                        </label>
+                                        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+                                        <label for="inputPassword">
+                                            Mot de passe
+                                                    
+                                        </label>
+                                        <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+
+                                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+                                        {#
+                                                                Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                                                                See https://symfony.com/doc/current/security/remember_me.html
+                                                        
+                                                                <div class="checkbox mb-3">
+                                                                    <label>
+                                                                        <input type="checkbox" name="_remember_me"> Remember me
+                                                                    </label>
+                                                                </div>
+                                                            #}
+
+                                        <button class="btn btn-lg btn-primary mt-1" type="submit">
+                                            Sign in
+                                                                    
+                                                            
+                                        </button>
+                                    </form>
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="oblique position-absolute top-0 h-100 d-md-block d-none me-n8">
+                                    <div class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" style="background-image:url('./img/curved-images/curved6.jpg')"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+    </body>
+</html>

@@ -310,7 +310,7 @@
     transition: .5s cubic-bezier(.5, 0, 0, 1);
 }
 .reveal-loaded #slidein {
-    animation-duration: 8s;
+    animation-duration: 1s;
     animation-name: slidein;
 }
 @keyframes slidein {
@@ -326,12 +326,12 @@
 }
 /* Animations page accueil "blogpost" */
 
-#slide-in {
-    animation-duration: 1s;
+#slidein {
+    animation-duration: 2s;
     animation-name: slidein;
 }
 
-@keyframes slidein {
+@keyframes slide-in {
     from {
         margin-bottom: 100%;
         width: 300%;
