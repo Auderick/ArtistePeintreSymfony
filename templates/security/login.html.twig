@@ -7,10 +7,7 @@
         <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
         <link rel="icon" type="image/png" href="../assets/img/favicon.png">
         <title>
-            Login
-                                      
-                                
-                    
+            Login                                               
         </title>
         <!--     Fonts and icons     -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -38,9 +35,7 @@
                                                                                     
                                         </h3>
                                         <p class="mb-0">
-                                            Administration du site
-                                                                                                                        
-                                                                                    
+                                            Administration du site                                           
                                         </p>
                                     </div>
                                     <form method="post">
@@ -49,33 +44,24 @@
                                                 {{ error.messageKey|trans(error.messageData, 'security') }}
                                             </div>
                                         {% endif %}
-
                                         {% if app.user %}
                                             <div class="mb-3">
-                                                You are logged in as 
-                                                            
-                                                {{ app.user.userIdentifier }}
-                                                , 
-                                                            
+                                                You are logged in as            
+                                                {{ app.user.userIdentifier }}           
                                                 <a href="{{ path('app_logout') }}">
-                                                    Logout
-                                                                
+                                                    Logout               
                                                 </a>
                                             </div>
                                         {% endif %}
-
                                         <h1 class="h3 mb-3 font-weight-normal">
-                                            Veuillez vous connecter
-                                                
+                                            Veuillez vous connecter    
                                         </h1>
                                         <label for="inputEmail">
-                                            Email
-                                                
+                                            Email     
                                         </label>
                                         <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
                                         <label for="inputPassword">
-                                            Mot de passe
-                                                    
+                                            Mot de passe            
                                         </label>
                                         <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
 
@@ -93,12 +79,9 @@
                                                             #}
 
                                         <button class="btn btn-lg btn-primary mt-1" type="submit">
-                                            Sign in
-                                                                    
-                                                            
+                                            Sign in                   
                                         </button>
                                     </form>
-
                                 </div>
                             </div>
                             <div class="col-md-6">
