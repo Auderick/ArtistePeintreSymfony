@@ -28,6 +28,11 @@ npm run build
 docker-compose up -d
 symfony server:start
 ```
+### Ajouter des données de test
+
+```bash
+symfony console doctrine:fixtures:load
+```
 
 ### Lancer des tests
 

@@ -1,21 +1,29 @@
 <!-- About Start -->
     <div class="container-fluid py-5">
         <div class="container py-5">
-            <div class="row gx-0 mb-3 mb-lg-0 reveal" id="slidein">
+        <div class="text-center mx-auto mb-5" style="max-width: 500px;">
+                <h1 class="display-5">Dernières réalisations</h1>
+                <hr class="w-25 mx-auto text-primary" style="opacity: 1;">
+            </div>
+            {% for peinture in peintures %}
+            <div class="row gx-0 mb-lg-3 reveal" id="slidein">
                 <div class="col-lg-6 my-lg-5 py-lg-5">
                     <div class="about-start bg-primary p-5">
-                        <h1 class="display-5 mb-4">Welcome To Painter</h1>
-                        <p>Tempor erat elitr at rebum at at clita. Diam dolor diam ipsum et, tempor sit sit diam amet et eos labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor magna dolore erat amet </p>
-                        <a href="" class="btn btn-secondary rounded-pill py-md-3 px-md-5 mt-4">Contact Us</a>
+                        <h1 class="display-5 mb-4">{{ peinture.nom }}</h1>
+                        <p>{{ peinture.description|u.truncate(200, '...', false) }}</p>
+                        <p class="h6 text-upercase text-muted py-md-3 px-md-5 mt-4" >
+                        <time datetime="04-01-2023">Ajoutée le {{ peinture.createdAt|date('d/m/y') }}</time>
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-6" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100" src="img/about-1.jpg" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100 mb-2" src="{{ peinture.file }}" style="object-fit: cover;">
                     </div>
                 </div>
             </div>
-            <div class="row gx-0 reveal" id="slidein">
+            {% endfor %}
+            {# <div class="row gx-0 reveal" id="slidein">
                 <div class="col-lg-6" style="min-height: 400px;">
                     <div class="position-relative h-100">
                         <img class="position-absolute w-100 h-100" src="img/about-2.jpg" style="object-fit: cover;">
@@ -28,7 +36,7 @@
                         <a href="" class="btn btn-secondary rounded-pill py-md-3 px-md-5 mt-4">Get A Quote</a>
                     </div>
                 </div>
-            </div>
+            </div> #} 
         </div>
     </div>
     <!-- About End -->

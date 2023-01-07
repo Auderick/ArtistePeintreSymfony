@@ -110,7 +110,7 @@
 
 .about-start,
 .about-end {
-    background: url(../img/about-bg.jpg) center center no-repeat;
+    background: url(../img/about-bg.png) center center no-repeat;
     background-size: contain;
 }
 
@@ -310,7 +310,7 @@
     transition: .5s cubic-bezier(.5, 0, 0, 1);
 }
 .reveal-loaded #slidein {
-    animation-duration: 1s;
+    animation-duration: 2s;
     animation-name: slidein;
 }
 @keyframes slidein {
@@ -326,9 +326,9 @@
 }
 /* Animations page accueil "blogpost" */
 
-#slidein {
-    animation-duration: 2s;
-    animation-name: slidein;
+#slide-in {
+    animation-duration: 3s;
+    animation-name: slide-in;
 }
 
 @keyframes slide-in {

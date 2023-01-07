@@ -41,7 +41,7 @@ class AppFixtures extends Fixture
         $manager->persist($user);
         
         // Création de 10 Blogpost
-        for ($i=0; $i < 10; $i++){
+        for ($i=0; $i < 10; $i++) {
             $blogpost = new Blogpost();
             
             $blogpost->setTitre($faker->words(3, true))
@@ -54,7 +54,7 @@ class AppFixtures extends Fixture
         }
         
         // Création de 5 catégories
-        for ($k=0; $k < 5; $k++){
+        for ($k=0; $k < 5; $k++) {
             $categorie = new Categorie();
 
             $categorie->setNom($faker->word())
@@ -64,19 +64,19 @@ class AppFixtures extends Fixture
             $manager->persist($categorie);
 
             // Création de 2 peintures/catégories
-            for ($j=0; $j < 2; $j++){
+            for ($j=0; $j < 2; $j++) {
                 $peinture = new Peinture();
                 
                 $peinture->setNom($faker->words(3, true))
                          ->setLargeur($faker->randomFloat(2, 20, 60))
                          ->setHauteur($faker->randomFloat(2, 20, 60))
                          ->setEnVente($faker->randomElement([true, false]))
-                         ->setDateRealisation($faker->datetimeBetween('-6 month','now' ))
+                         ->setDateRealisation($faker->datetimeBetween('-6 month', 'now'))
                          ->setCreatedAt($faker->datetimeBetween('-6 month', 'now'))
                          ->setDescription($faker->text())
                          ->setPortfolio($faker->randomElement([true, false]))
                          ->setSlug($faker->slug)
-                         ->setFile('/img/placeholder.pgj')
+                         ->setFile('/img/placeholder.jpg')
                          ->addCategorie($categorie)
                          ->setPrix($faker->randomFloat(2, 10, 9999))
                          ->setUser($user);
