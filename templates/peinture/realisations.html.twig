@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Réalisations!
+{% endblock %}
+
+{% block body %}
+	<!-- Réalisation Start -->
+	<div class="container-fluid py-5">
+		<div class="container py-5">
+			<div class="text-center mx-auto mb-5" style="max-width: 500px;">
+				<h1 class="display-5">Réalisations</h1>
+				<hr class="w-25 mx-auto text-primary" style="opacity: 1;"/>
+			</div>
+			<div class="row g-3" id="slide-in">
+				{% for peinture in peintures %}
+					<div class="col-xl-6 col-lg-6">
+						<div class="blog-item bg-primary">
+							<img class="img-fluid w-100" src="{{ peinture.file }}" alt="" style="max-height: 400px;"/>
+							<div class="d-flex align-items-center">
+								<div class="bg-secondary mt-n4 d-flex flex-column flex-shrink-0 justify-content-center text-center me-4" style="width: 60px; height: 100px;">
+									<i class="fa fa-calendar-alt text-primary mb-2"></i>
+									<p class="m-0 text-white">{{ peinture.createdAt|date('d M') }}</p>
+									<small class="text-white">{{ peinture.createdAt|date('Y') }}</small>
+								</div>
+								<div>
+									<h3 class="mt-auto">{{ peinture.nom }}</h3>
+									<a class="mb-0 ms-auto text-muted" href="">{{ peinture.description|u.truncate(200, '...', false) }}</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+        <div class="d-flex justify-content-center">
+            {% do peintures.setPageRange(2) %}
+            {{ knp_pagination_render(peintures, 'base/pagination.html.twig') }}
+        </div>
+	</div>
+	<!-- Réalisations End -->
+
+{% endblock %}
