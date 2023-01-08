@@ -28,10 +28,17 @@ npm run build
 docker-compose up -d
 symfony server:start
 ```
+
 ### Ajouter des données de test
 
 ```bash
 symfony console doctrine:fixtures:load
+```
+
+### Ajouter la pagination
+
+```bash
+composer require knplabs/knp-paginator-bundle
 ```
 
 ### Lancer des tests
