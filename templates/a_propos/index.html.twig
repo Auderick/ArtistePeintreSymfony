@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}A propos!{% endblock %}
+
+{% block body %}
+<!-- A propos Start -->
+<section class="container-fluid bg-primary bg-artiste-peintre py-5" style="margin-top: 0px; margin-bottom: -15px;">
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-7">
+            <blockquote class="blockquote mb-0">
+            <p class="h2">{{ peintre.aPropos }}</p>
+            <footer class="blockquote-footer text-50 mb-0 mt-3">
+                {{ peintre.prenom}} {{ peintre.nom}}
+            </footer>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- A propos End -->
+
+{% endblock %}

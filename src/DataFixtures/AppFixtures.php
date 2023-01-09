@@ -29,11 +29,12 @@ class AppFixtures extends Fixture
         $user = new User();
         
         $user->setEmail('user@test.com')
-        ->setPrenom($faker->firstName())
-        ->setNom($faker->lastname())
-        ->setTelephone($faker->phoneNumber())
-        ->setAPropos($faker->text())
-        ->setFacebook('facebook');
+             ->setPrenom($faker->firstName())
+             ->setNom($faker->lastname())
+             ->setTelephone($faker->phoneNumber())
+             ->setAPropos($faker->text())
+             ->setFacebook('facebook')
+             ->setRoles(['ROLE_PEINTRE']);
         
         $password = $this->encoder->hashPassword($user, 'password');
         $user->setPassword($password);

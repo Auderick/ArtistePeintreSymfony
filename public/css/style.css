@@ -282,8 +282,8 @@
     height: 60px;
 }
 
-.bg-call-to-action {
-    background: url(../img/call-to-action.jpg) top right no-repeat;
+.bg-artiste-peintre {
+    background: url(../img/artiste-peintre.jpg) top right no-repeat;
     background-size: contain;
 }
 
@@ -293,7 +293,7 @@
 }
 
 @media (max-width: 991.98px) {
-    .bg-call-to-action,
+    .bg-artiste-peintre,
     .bg-footer {
         background-size: cover;
     }
