@@ -370,5 +370,11 @@
         width: 100%;
     }
 }
-
+/* Détail réalisation peinture dans peinture/détails */
+.list-group-item{
+    background: border-box;
+}
+h6.d-flex.mb-0.text-uppercase {
+    font-family: math;
+}
     

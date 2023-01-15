@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+	Détail peinture!
+
+{% endblock %}
+{% block body %}
+	<!-- Détail peinture réalisation Start -->
+	<div class="container-fluid py-4">
+		<div class="container py-4">
+			<div class="text-right mx-auto mb-1">
+				<h2>{{ peinture.nom }}</h2>
+				{% for categorie in peinture.categorie %}
+					<span class="badge bg-secondary">{{ categorie.nom }}</span>
+				{% endfor %}
+			</div>
+			<div class="row gx-0 mb-lg-3 reveal" id="slidein">
+				 <div class="col-lg-3 my-lg-5 py-lg-5">
+                    <div class="about-start bg-primary p-5">
+                        <p class="fs-lg mb-7 text-muted">
+                            {{ peinture.description }}
+                        </p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <h6 class="d-flex mb-0 text-uppercase">
+                                    date de réalisation
+                                    <span class="ms-auto">{{ peinture.dateRealisation|date('d/m/Y') }}</span>
+                                </h6>
+                            </li>
+                            <li class="list-group-item">
+                                <h6 class="d-flex mb-0 text-uppercase">
+                                    Largeur
+                                    <span class="ms-auto">{{ peinture.largeur }}
+                                        Cm</span>
+                                </h6>
+                            </li>
+                            <li class="list-group-item">
+                                <h6 class="d-flex mb-0 text-uppercase">
+                                    Hauteur
+                                    <span class="ms-auto">{{ peinture.hauteur }}
+                                        Cm</span>
+                                </h6>
+                            </li>
+                            {% if peinture.enVente %}
+                                <li class="list-group-item">
+                                    <h6 class="d-flex mb-0 text-uppercase">
+                                        <strong>Disponible à la vente</strong>
+                                        <span class="ms-auto">
+                                            <strong>{{ peinture.prix }}
+                                                €</strong>
+                                        </span>
+                                    </h6>
+                                </li>
+                            {% endif %}
+                        </ul>
+				    </div>
+                 </div>
+                <div class="col-lg-9">
+                    <div class="position-relative h-100">
+                        <img class="w-100 h-auto" src="/img/placeholder.jpg" alt="">
+                    </div>
+                </div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Détail peinture réalisation End -->
+<script>
+
+        const ratio = .1
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: ratio
+            }
+        const handleIntersect = function(entries, observer){
+            entries.forEach(function (entry){
+                if (entry.intersectionRatio > ratio){
+                    entry.target.classList.add('reveal-visible')
+                    observer.unobserve(entry.target)
+                }
+            })
+        }
+        document.documentElement.classList.add('reveal-loaded')
+        const observer = new IntersectionObserver(handleIntersect, options)
+        document.querySelectorAll('.reveal').forEach(function(r){
+
+            observer.observe(r)
+        })
+
+    </script>
+
+{% endblock %}

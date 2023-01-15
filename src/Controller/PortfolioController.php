@@ -18,14 +18,14 @@ class PortfolioController extends AbstractController
             'categories' => $categorieRepository->findAll(),
         ]);
     }
-    
+
     #[Route('/portfolio/{slug}', name: 'portfolio_categorie')]
-    public function categorie(Categorie $categorie,PeintureRepository $peintureRepository): Response
+    public function categorie(Categorie $categorie, PeintureRepository $peintureRepository): Response
     {
         $peintures = $peintureRepository->findAllPortfolio($categorie);
 
         return $this->render('portfolio/categorie.html.twig', [
-            'categorie' => $categorie, 
+            'categorie' => $categorie,
             'peintures' => $peintures,
         ]);
     }

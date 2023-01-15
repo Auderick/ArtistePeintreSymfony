@@ -14,12 +14,11 @@ class BlogpostController extends AbstractController
     #[Route('/actualites', name: 'actualites')]
     public function actualites(
         BlogpostRepository $blogpostRepository,
-        PaginatorInterface $paginator, 
+        PaginatorInterface $paginator,
         Request $request
-    ): Response
-    {
+    ): Response {
         // Création de la pagination avec paginator
-        
+
         $data = $blogpostRepository->findAll();
 
         $blogposts = $paginator->paginate(
