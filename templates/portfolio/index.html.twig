@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Portfolio!
+{% endblock %}
+
+{% block body %}
+	<!-- Page info section -->
+	<section class="page-info-section bg-portfolio">
+		<div class="pi-content">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-12 col-lg-6 text-white">
+						<h1>
+							Portfolio
+						</h1>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Page info section -->
+
+	<!-- Forme-->
+	{# <div class="position-relative">
+				    <div class="shape shape-bottom shape-fluid-x svg-shim text-light">
+				        <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+				            <path d="M0 48h2880V0h-720C1442.5 52 720 0 720 0H0v48z" fill="currentImg" />
+				        </svg>
+				
+				    </div>
+				</div>
+				 #}
+
+	<!-- Categorie Start -->
+		<div class="container-fluid py-5 "> 
+			<div class="container">
+				<div class="row g-3" id="slide-in">
+					{% for categorie in categories %}
+						{% set img = categorie.peintures|last%}
+						<div class="col-xl-4 col-lg-6">
+						<div class="blog-item bg-primary">
+							<a href="{{ path('portfolio_categorie', {'slug': categorie.slug}) }}">
+								<img class="img-fluid w-100" src="{{ img.file }}" alt="">
+								<div class="d-flex align-items-center">
+									<div class="col-12 text-center">
+										<h3 class="mt-auto">
+											{{ categorie.nom }}
+										</h3>
+										<a class="mb-0 ms-auto text-muted">
+											{{ categorie.description }}
+										</a>
+									</div>
+								</div>
+							</a>
+						</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+
+	<!-- Categorie End -->
+
+{% endblock %}

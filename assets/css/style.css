@@ -98,7 +98,7 @@
 }
 
 .bg-hero {
-    background: url(../img/hero.jpg) top right no-repeat;
+    background: url(https://picsum.photos/200) top right no-repeat;
     background-size: contain;
 }
 
@@ -110,7 +110,7 @@
 
 .about-start,
 .about-end {
-    background: url(../img/about-bg.jpg) center center no-repeat;
+    background: url(../img/about-bg.png) center center no-repeat;
     background-size: contain;
 }
 
@@ -282,8 +282,8 @@
     height: 60px;
 }
 
-.bg-call-to-action {
-    background: url(../img/call-to-action.jpg) top right no-repeat;
+.bg-artiste-peintre {
+    background: url(../img/artiste-peintre.jpg) top right no-repeat;
     background-size: contain;
 }
 
@@ -293,8 +293,82 @@
 }
 
 @media (max-width: 991.98px) {
-    .bg-call-to-action,
+    .bg-artiste-peintre,
     .bg-footer {
         background-size: cover;
     }
 }
+
+/* Portfolio */ 
+.bg-portfolio {
+    background: url(../img/page-top-bg-portfolio.jpg) center center no-repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+}
+.page-info-section {
+    height: 499px;
+    position: relative;
+}
+
+.page-info-section .pi-content {
+    position: absolute;
+    width: 100%;
+    bottom: 15em;
+    left: 0;
+    z-index: 2;
+}
+
+.page-info-section .pi-content h1 {
+    font-size: 60px;
+    margin-bottom: 25px;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+}
+
+/* Animations page accueil "réalisations"  */
+.reveal-loaded .reveal {
+    opacity: 0;
+    transform: transition(-30px);
+}
+.reveal-loaded .reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: .5s cubic-bezier(.5, 0, 0, 1);
+}
+.reveal-loaded #slidein {
+    animation-duration: 2s;
+    animation-name: slidein;
+}
+@keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
+/* Animations page accueil "blogpost" */
+
+#slide-in {
+    animation-duration: 3s;
+    animation-name: slide-in;
+}
+
+@keyframes slide-in {
+    from {
+        margin-bottom: 100%;
+        width: 300%;
+    }
+
+    to {
+        margin-bottom: 0%;
+        width: 100%;
+    }
+}
+
+ 

@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Porfolio categorie!
+
+{% endblock %}
+{% block body %}
+
+	<!-- Page info categorie -->
+	{% set img = categorie.peintures|last %}
+	<section class="page-info-section bg-portfolio">
+		<div class="pi-content">
+			<div class="container">
+				<div class="d-flex align-items-center">
+					<div class="col-12 text-center text-white">
+						<h1 class="mt-auto">
+							{{ categorie.nom }}
+						</h1>
+						<a class="mb-0 ms-auto text-muted" href="">
+							{{ categorie.description }}
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Page info categorie -->
+	<!-- Forme-->
+	{# <div class="position-relative">
+		    		    <div class="shape shape-bottom shape-fluid-x svg-shim text-light">
+		    		        <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+		    		            <path d="M0 48h2880V0h-720C1442.5 52 720 0 720 0H0v48z" fill="currentImg" />
+		    		        </svg>
+		    		
+		    		    </div>
+		    		</div>
+		    		 #}
+	<!-- Categories detail -->
+		<div class="container-fluid py-5 "> <div class="container">
+			<div class="row g-3" id="slide-in">
+				{% for peinture in peintures %}
+					<div class="col-xl-4 col-lg-6">
+						<div class="blog-item bg-primary">
+							<img class="img-fluid w-100" src="{{ peinture.file }}" alt="">
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	<!-- Categories detail End -->
+{% endblock %}

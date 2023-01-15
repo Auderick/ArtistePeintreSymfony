@@ -299,6 +299,34 @@
     }
 }
 
+/* Portfolio */ 
+.bg-portfolio {
+    background: url(../img/page-top-bg-portfolio.jpg) center center no-repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+}
+.page-info-section {
+    height: 499px;
+    position: relative;
+}
+
+.page-info-section .pi-content {
+    position: absolute;
+    width: 100%;
+    bottom: 15em;
+    left: 0;
+    z-index: 2;
+}
+
+.page-info-section .pi-content h1 {
+    font-size: 60px;
+    margin-bottom: 25px;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+}
+
 /* Animations page accueil "réalisations"  */
 .reveal-loaded .reveal {
     opacity: 0;
@@ -342,4 +370,5 @@
         width: 100%;
     }
 }
- 
+
+    
