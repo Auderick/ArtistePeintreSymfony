@@ -36,11 +36,11 @@ class PeintureController extends AbstractController
     }
 
     // pour la page avec le détail des réalisations
-    #[Route('/realisations/{slug}', name: 'realisations_details')]
+    #[Route('/realisations/{slug}', name: 'realisations_detail')]
 
-    public function details(Peinture $peinture): Response
+    public function detail(Peinture $peinture): Response
     {
-        return $this->render('peinture/details.html.twig', [
+        return $this->render('peinture/detail.html.twig', [
             'peinture' => $peinture,
         ]);
     }

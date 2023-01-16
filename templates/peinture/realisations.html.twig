@@ -15,7 +15,7 @@
 			<div class="row g-3" id="slide-in">
 				{% for peinture in peintures %}
 					<div class="col-xl-6 col-lg-6">
-						<div class="blog-item bg-primary" onclick="location.href='{{ path("realisations_details", {"slug": peinture.slug}) }}';" style="cursor:pointer;">
+						<div class="blog-item bg-primary" onclick="location.href='{{ path("realisations_detail", {"slug": peinture.slug}) }}';" style="cursor:pointer;">
 							<img class="img-fluid w-100" src="{{ peinture.file }}" alt="" style="max-height: 400px;"/>
 							<div class="d-flex align-items-center">
 								<div class="bg-secondary mt-n4 d-flex flex-column flex-shrink-0 justify-content-center text-center me-4" style="width: 60px; height: 100px;">

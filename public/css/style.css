@@ -98,7 +98,7 @@
 }
 
 .bg-hero {
-    background: url(https://picsum.photos/200) top right no-repeat;
+    background: url(https://picsum.photos/180/100) top right no-repeat;
     background-size: contain;
 }
 
@@ -377,4 +377,9 @@
 h6.d-flex.mb-0.text-uppercase {
     font-family: math;
 }
-    
+
+/* Détail actualite dans blogpost/détail */ 
+h1.display-4.text-center {
+    font-style: italic;
+    font-family: ui-serif;
+}
