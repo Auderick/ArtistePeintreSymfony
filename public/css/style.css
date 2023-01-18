@@ -130,14 +130,14 @@
 
 .service-item,
 .contact-item {
-    background: url(../img/service.jpg) top center no-repeat;
+    background: url(../img/about-bg.png) top center no-repeat;
     background-size: cover;
     transition: .5s;
 }
 
 .service-item:hover,
 .contact-item:hover {
-    background: url(../img/service.jpg) bottom center no-repeat;
+    background: url(../img/about-bg.png) bottom center no-repeat;
     background-size: cover;
 }
 
@@ -382,4 +382,53 @@ h6.d-flex.mb-0.text-uppercase {
 h1.display-4.text-center {
     font-style: italic;
     font-family: ui-serif;
+}
+
+/* Contact form dans contact/index */
+/* input#contact_nom,#contact_email {
+    height: 55px;
+    width: 260px;
+    border-radius: 8px;
+    border: 0;
+    background: #f2f2f2;
+} */
+/* textarea#contact_message {
+    height: 150px;
+    width: 540px;
+    border-radius: 8px;
+    border: 0;
+    background: #f2f2f2;
+} */
+label.form-label {
+    vertical-align: top;
+}
+
+label.required {
+    color:#1817175e;;
+    margin-right: 2px;
+}
+button#contact_envoyer {
+    color: white;
+    width: 100%;
+    border-radius: 8px;
+    border: 0;
+    background: #8cc641;
+    font-weight: bold;
+}
+input#contact_nom,
+#contact_email,
+textarea#contact_message{
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #54595F;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    appearance: none;
+    border-radius: 8px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
