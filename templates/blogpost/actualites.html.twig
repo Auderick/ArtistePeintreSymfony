@@ -25,7 +25,7 @@
 								</div>
 								<div>
 									<h3 class="mt-auto">{{ blogpost.titre }}</h3>
-									<a class="mb-0 ms-auto text-muted" href="">{{ blogpost.contenu|u.truncate(200, '...', false) }}</a>
+									<a class="mb-0 ms-auto text-muted" onclick="location.href='{{ path("actualites_detail", {"slug": blogpost.slug}) }}';" style="cursor:pointer;">{{ blogpost.contenu|u.truncate(200, '...', false) }}</a>
 								</div>
 							</div>
 						</div>
