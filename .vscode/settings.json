@@ -1,3 +1,7 @@
 {
-    "symfony-vscode.phpExecutablePath": "C:\\MAMP\\bin\\php\\php8.1.0\\php.exe"
+    "symfony-vscode.phpExecutablePath": "C:\\MAMP\\bin\\php\\php8.1.0\\php.exe",
+    "colorize.colorized_variables": [
+    
+        "CSS"
+    ]
 }
