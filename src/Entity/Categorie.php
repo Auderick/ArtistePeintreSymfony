@@ -100,4 +100,14 @@ class Categorie
 
         return $this;
     }
+
+    /* Cette fonction sert à : si il ne sait pas quoi retourner dans , ici categorie c'est un string
+     Nom de l'erreur lorsque l'on essaie d'afficher dans notre navigateur (Object of class App\Entity\Categorie could not be converted to string)
+     traduit par L'objet de la classe App\Entity\Categorie n'a pas pu être converti en chaîne
+     */
+
+    public function __toString()
+    {
+        return $this->nom;
+    }
 }

@@ -16,7 +16,7 @@
 				{% for peinture in peintures %}
 					<div class="col-xl-6 col-lg-6">
 						<div class="blog-item bg-primary" onclick="location.href='{{ path("realisations_detail", {"slug": peinture.slug}) }}';" style="cursor:pointer;">
-							<img class="img-fluid w-100" src="{{ peinture.file }}" alt="" style="max-height: 400px;"/>
+							<img class="img-fluid w-100" src="{{ vich_uploader_asset(peinture, 'imageFile') }}" alt="" style="max-height: 400px;"/>
 							<div class="d-flex align-items-center">
 								<div class="bg-secondary mt-n4 d-flex flex-column flex-shrink-0 justify-content-center text-center me-4" style="width: 60px; height: 100px;">
 									<i class="fa fa-calendar-alt text-primary mb-2"></i>

@@ -42,7 +42,7 @@
 				{% for peinture in peintures %}
 					<div class="col-xl-4 col-lg-6">
 						<div class="blog-item bg-primary">
-							<img class="img-fluid w-100" src="{{ peinture.file }}" alt="">
+							<img class="img-fluid w-100" src="{{ vich_uploader_asset(peinture, 'imageFile') }}" alt="">
 						</div>
 					</div>
 				{% endfor %}
