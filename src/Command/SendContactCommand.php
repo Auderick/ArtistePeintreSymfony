@@ -3,12 +3,13 @@
 namespace App\Command;
 
 use App\Service\ContactService;
-use App\Repository\UserRepository;
-use App\Repository\ContactRepository;
 use Symfony\Component\Mime\Email;
+use App\Repository\UserRepository;
 use Symfony\Component\Mime\Address;
+use App\Repository\ContactRepository;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -37,8 +38,9 @@ class SendContactCommand extends Command
     {
         $toSend = $this->contactRepository->findBy(['isSend' => false]);
         $adress = new Address(
-            $this->userRepository->getPeintre()->getEmail(), 
-            $this->userRepository->getPeintre()->getNom() . '' . $this->userRepository->getPeintre()->getPrenom());
+            $this->userRepository->getPeintre()->getEmail(),
+            $this->userRepository->getPeintre()->getNom() . '' . $this->userRepository->getPeintre()->getPrenom()
+        );
 
         foreach ($toSend as $mail) {
             $email= (new Email())

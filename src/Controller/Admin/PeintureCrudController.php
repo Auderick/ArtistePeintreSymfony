@@ -36,7 +36,7 @@ class PeintureCrudController extends AbstractCrudController
             BooleanField::new('portfolio'),
             TextField::new('imageFile')->setFormType(VichImageType::class)->onlyWhenCreating(),
             ImageField::new('file')->setBasePath('/uploads/peintures')->onlyOnIndex(),
-            SlugField::new('slug')->setTargetFieldName('nom')->hideOnIndex(),
+            SlugField::new('slug')->setTargetFieldName('nom')->hideOnIndex() ,
             AssociationField::new('categorie'),
 
         ];
