@@ -37,17 +37,44 @@
 		    		</div>
 		    		 #}
 	<!-- Categories detail -->
-		<div class="container-fluid py-5 "> <div class="container">
-			<div class="row g-3" id="slide-in">
-				{% for peinture in peintures %}
-					<div class="col-xl-4 col-lg-6">
-						<div class="blog-item bg-primary">
-							<img class="img-fluid w-100" src="{{ vich_uploader_asset(peinture, 'imageFile') }}" alt="">
+		<div class="container-fluid py-5 "> 
+			<div class="container">
+				<div class="gg-container row g-3" id="slide-in">
+					{% for peinture in peintures %}
+					{# {% set img = categorie.peintures|last%} #}
+						<div class="col-xl-4 col-lg-6">
+							<div class="gg-box dark blog-item bg-primary">
+								<img class="img-fluid w-100" src="{{ vich_uploader_asset(peinture, 'imageFile') }}" alt="">
+							</div>
 						</div>
-					</div>
-				{% endfor %}
+					{% endfor %}
+				</div>
 			</div>
 		</div>
-	</div>
 	<!-- Categories detail End -->
+	<script src="/js/grid-gallery.min.js"></script>
+<script>
+    gridGallery({
+      selector: ".dark",
+      darkMode: true
+    });
+    gridGallery({
+      selector: "#horizontal",
+      layout: "horizontal"
+    });
+    gridGallery({
+      selector: "#square",
+      layout: "square"
+    });
+    gridGallery({
+      selector: "#gap",
+      gaplength: 10
+    });
+    gridGallery({
+      selector: "#heightWidth",
+      rowHeight: 180,
+      columnWidth: 280
+    });
+    </script>
+
 {% endblock %}

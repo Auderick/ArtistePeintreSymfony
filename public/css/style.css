@@ -328,6 +328,9 @@
 }
 
 /* Animations page accueil "réalisations"  */
+.about-start.bg-primary.p-5 {
+    margin-top: inherit;
+}
 .reveal-loaded .reveal {
     opacity: 0;
     transform: transition(-30px);
@@ -432,21 +435,11 @@ textarea#contact_message{
     border-radius: 8px;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-
-/************************ 
-*Dashboard Administration 
-*************************/
-/* A VERIFIER POUR OBTENIR LE MENU DERAOULAT EN ENTIER */
-/* Peinture create */
-.content-wrapper {
-    margin-bottom: 15em;
+/* Portfolio/Categorie */
+.position-relative {
+    margin-top: 7em;
 }
-section.main-content {
-    margin-bottom: 15em;
-}
-.wrapper {
-    margin-bottom: 15em;
-}
-aside.sidebar {
-    padding-bottom: 80em;
+/* Portfolio/Index */
+img.img-fluid.w-100#index {
+    max-height: 400px;
 }
