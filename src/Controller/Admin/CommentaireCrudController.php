@@ -2,29 +2,36 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\User;
+use App\Entity\Commentaire;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
-class UserCrudController extends AbstractCrudController
+class CommentaireCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return User::class;
+        return Commentaire::class;
     }
 
 
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('nom'),
-            TextField::new('prenom'),
-            TextField::new('telephone'),
-            TextareaField::new('aPropos'),
+            AssociationField::new('blogpost'), //champ association car on peut soit commenter un post ou une peinture
+            AssociationField::new('peinture'), //champ association car on peut soit commenter un post ou une peinture
+            TextField::new('auteur'),
+            EmailField::new('email')->onlyOnForms(),
+            DateTimeField::new('createdAt'),
+            TextareaField::new('contenu'),
+            BooleanField::new('isPublished'), // ce champ stock si c'est publié ou pas
         ];
     }
 
@@ -40,7 +47,6 @@ class UserCrudController extends AbstractCrudController
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-            ->setPageTitle('index', 'Paramètres')
-            ->setPageTitle('edit', 'Editer les paramètres');
+            ->setDefaultSort(['createdAt' => 'DESC']);
     }
 }

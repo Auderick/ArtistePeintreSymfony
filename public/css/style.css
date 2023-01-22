@@ -455,3 +455,42 @@ textarea#contact_message{
 img.img-fluid.w-100#index {
     max-height: 400px;
 }
+/* Commentaire/form.html.twig */
+button#commentaire_soumettre {
+    color: white;
+    width: 100%;
+    border-radius: 8px;
+    border: 0;
+    background: #8cc641;
+    font-weight: bold;
+}
+input#commentaire_auteur,
+#commentaire_email,
+textarea#commentaire_contenu {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #54595F;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    appearance: none;
+    border-radius: 8px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+/* Commentaire/commentaires */
+div#commentaires {
+    text-align: left;
+    margin-bottom: auto;
+    margin-left: 1em;
+}
+p#commentaires {
+    color: #FFE468;
+    margin-bottom: 0;
+}
+small#commentaires {
+    margin-left: 2em;
+}

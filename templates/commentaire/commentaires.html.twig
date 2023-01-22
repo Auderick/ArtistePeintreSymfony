@@ -1,0 +1,27 @@
+
+<section>
+    {% for com in commentaires %}
+        <div class="container mb-2">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-9 col-xl-8">
+                    <div class="card card-row shadow-light-lg">
+                        <div class="row gx-0">
+                            <!-- body -->
+                            <div class="card-body">
+                                <blockquote class="mb-0 text-left">
+                                <div class="blockquote" id="commentaires">
+                                <span class="h6 text-uppercase"><p id="commentaires">{{ com.auteur }}</p><small id="commentaires">le {{ com.createdAt|date('d/m/Y') }}</small></span>
+                                </div>
+                                    <!-- Text -->
+                                    <p>
+                                        {{ com.contenu}}
+                                    </p>
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</section>
