@@ -177,6 +177,18 @@
 .contact-item:hover .contact-icon i {
     color: var(--primary);
 }
+.position-relative#contact {
+    margin-top: 0;
+}
+.col-lg-4.col-md-6.pt-5#contact {
+    margin-bottom: 2em;
+}
+.row.g-3#contact {
+    margin-bottom: 0;
+}
+iframe.position-relative.w-100.h-100#contact {
+    margin-top: 0;
+}
 
 .service-item a.btn {
     position: relative;
