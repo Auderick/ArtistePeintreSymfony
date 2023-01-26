@@ -38,8 +38,8 @@ class CommentaireCrudController extends AbstractCrudController
     public function configureActions(Actions $actions): Actions
     {
         return $actions
-            ->add(Crud::PAGE_INDEX, Action::DETAIL) // pour afficher un boutton qui permet d'accéder au détail
-            ->disable(Action::DELETE, Action::NEW); // pour désactiver l'option delete et new
+            ->add(Crud::PAGE_INDEX, Action::DETAIL); // pour afficher un boutton qui permet d'accéder au détail
+        //->disable(Action::DELETE, Action::NEW); // pour désactiver l'option delete et new
     }
 
     // Permet de modifier les inscriptions ex: dans paramètre en haut il est écrit User devient Paramètres

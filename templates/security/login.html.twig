@@ -41,15 +41,16 @@
                                     <form method="post">
                                         {% if error %}
                                             <div class="alert alert-danger">
-                                                {{ error.messageKey|trans(error.messageData, 'security') }}
+                                                {# {{ error.messageKey|trans(error.messageData, 'security') }} #}
+                                                Vous n'êtes pas autoriser à accéder à cette page! Attention vous êtes surveillé!
                                             </div>
                                         {% endif %}
                                         {% if app.user %}
                                             <div class="mb-3">
-                                                You are logged in as            
+                                                Vous êtes connecté en tant que          
                                                 {{ app.user.userIdentifier }}           
                                                 <a href="{{ path('logout') }}">
-                                                    Logout               
+                                                    Se déconnecter               
                                                 </a>
                                             </div>
                                         {% endif %}
@@ -79,7 +80,7 @@
                                                             #}
 
                                         <button class="btn btn-lg btn-primary mt-1" type="submit">
-                                            Sign in                   
+                                            S'identifier                  
                                         </button>
                                     </form>
                                 </div>

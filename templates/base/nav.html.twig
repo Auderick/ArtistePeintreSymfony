@@ -7,7 +7,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto py-0 pe-4 border-end border-5 border-primary">
+            <div class="navbar-nav ms-auto py-0 pe-5">
                 <a href="{{ path('realisations') }}" class="nav-item nav-link">Réalisations</a>
                 <a href="{{ path('actualites') }}" class="nav-item nav-link">Actualités</a>
                 <div class="nav-item dropdown">
@@ -21,12 +21,15 @@
                 <a href="{{  path('a_propos') }}" class="nav-item nav-link">A propos</a>
                 <a href="{{ path('contact') }}" class="nav-item nav-link">Me contacter</a>
             </div>
-            <div class="d-none d-lg-flex align-items-center ps-4">
-                <i class="fa fa-2x fa-mobile-alt text-secondary me-3"></i>
+            <div>
+                {# <i class="fa fa-2x fa-mobile-alt text-secondary me-3"></i>
                 <div>
                     <h5 class="text-primary mb-1"><small>Téléphone</small></h5>
                     <h6 class="text-light m-0">06 85 35 39 95</h6>
-                </div>
+                </div> #}
+
+                <a class="nav-link active" style="color:currentcolor; " href="{{ path('admin') }} "><i class="fas fa-chart-line"></i></a>
+
             </div>
         </div>
     </nav>

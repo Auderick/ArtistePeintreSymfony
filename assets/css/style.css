@@ -128,19 +128,6 @@
     }
 }
 
-.service-item,
-.contact-item {
-    background: url(../img/service.jpg) top center no-repeat;
-    background-size: cover;
-    transition: .5s;
-}
-
-.service-item:hover,
-.contact-item:hover {
-    background: url(../img/service.jpg) bottom center no-repeat;
-    background-size: cover;
-}
-
 .service-item .service-icon,
 .contact-item .contact-icon {
     margin-top: -50px;
@@ -189,11 +176,6 @@
     opacity: 1;
 }
 
-.bg-quote {
-    background: url(../img/quote.jpg) top right no-repeat;
-    background-size: contain;
-}
-
 @media (max-width: 991.98px) {
     .bg-quote {
         background-size: cover;
@@ -237,11 +219,6 @@
 .team-item:hover .team-social {
     transition-delay: .3s;
     opacity: 1;
-}
-
-.bg-testimonial {
-    background: url(../img/testimonial.jpg) top left no-repeat;
-    background-size: contain;
 }
 
 @media (max-width: 991.98px) {

@@ -27,15 +27,16 @@ class AppFixtures extends Fixture
         $user = new User();
 
         $user->setEmail('user@test.com')
-             ->setPrenom($faker->firstName())
-             ->setNom($faker->lastname())
+             ->setPrenom('christophe')
+             ->setNom('guthoerl')
              ->setTelephone($faker->phoneNumber())
              ->setAPropos($faker->text())
              ->setFacebook('facebook')
-             ->setRoles(['ROLE_PEINTRE']);
+             ->setRoles(['ROLE_PEINTRE'])
+            ->setPassword($this->encoder->hashPassword($user, 'password'));
 
-        $password = $this->encoder->hashPassword($user, 'password');
-        $user->setPassword($password);
+        // $password = $this->encoder->hashPassword($user, 'password');
+        // $user->setPassword($password);
 
         $manager->persist($user);
 

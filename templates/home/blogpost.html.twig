@@ -8,7 +8,7 @@
             <div class="row g-3" id="slide-in">
             {% for blogpost in blogposts %}
                 <div class="col-xl-4 col-lg-6" onclick="location.href='{{ path("actualites_detail", {"slug": blogpost.slug}) }}';" style="cursor:pointer;">
-                    <div class="blog-item bg-primary">
+                    <div class="blog-item bg-primary" onclick="location.href='{{ path("actualites_detail", {"slug": blogpost.slug}) }}';" style="cursor:pointer;">
                         <img class="img-fluid w-100" src="img/blog-1.jpg" alt="">
                         <div class="d-flex align-items-center">
                             <div class="bg-secondary mt-n4 d-flex flex-column flex-shrink-0 justify-content-center text-center me-4" style="width: 60px; height: 100px;">

@@ -3,20 +3,28 @@
 namespace App\EventSubscriber;
 
 use DateTime;
+use App\Entity\User;
 use App\Entity\Blogpost;
 use App\Entity\Peinture;
+use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Security\Core\Security;
 use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Event\BeforeEntityPersistedEvent;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class EasyAdminSubscriber implements EventSubscriberInterface
 {
     private $slugger;
     private $security;
 
-    public function __construct(SluggerInterface $slugger, Security $security)
-    {
+    public function __construct(
+        SluggerInterface $slugger,
+        Security $security,
+        EntityManagerInterface $entityManager,
+        UserPasswordHasherInterface $passwordHasher
+    ) {
         $this->slugger = $slugger;
         $this->security = $security;
     }
@@ -46,7 +54,6 @@ class EasyAdminSubscriber implements EventSubscriberInterface
             $user = $this->security->getUser();
             $entity->setUser($user);
         }
-
         return;
     }
 }

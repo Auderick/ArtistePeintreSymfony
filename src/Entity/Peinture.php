@@ -215,13 +215,13 @@ class Peinture
      * must be able to accept an instance of 'File' as the bundle will inject one here
      * during Doctrine hydration.
      *
-     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $imageFile
+    //  * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $imageFile
      */
-    public function setImageFile(?File $imageFile = null): void
+    public function setImageFile(?File $file = null): void //remplacé $imagefile par $file
     {
-        $this->imageFile = $imageFile;
+        $this->imageFile = $file;
 
-        if (null !== $imageFile) {
+        if (null !== $file) {
             // It is required that at least one field changes if you are using doctrine
             // otherwise the event listeners won't be called and the file is lost
             $this->createdAt = new \DateTimeImmutable('now');

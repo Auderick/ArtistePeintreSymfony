@@ -98,7 +98,7 @@
 }
 
 .bg-hero {
-    background: url(https://picsum.photos/180/100) top right no-repeat;
+    background: url(../img/welcome.jpg) top right no-repeat;
     background-size: contain;
 }
 
@@ -162,18 +162,15 @@
     transition: .5s;
 }
 
-.service-item .service-icon i,
 .contact-item .contact-icon i {
     transform: rotate(45deg);
     transition: .5s;
 }
 
-.service-item:hover .service-icon div,
 .contact-item:hover .contact-icon div {
     background: var(--secondary);
 }
 
-.service-item:hover .service-icon i,
 .contact-item:hover .contact-icon i {
     color: var(--primary);
 }
@@ -188,110 +185,6 @@
 }
 iframe.position-relative.w-100.h-100#contact {
     margin-top: 0;
-}
-
-.service-item a.btn {
-    position: relative;
-    bottom: -30px;
-    opacity: 0;
-}
-
-.service-item:hover a.btn {
-    bottom: 0;
-    opacity: 1;
-}
-
-.bg-quote {
-    background: url(../img/quote.jpg) top right no-repeat;
-    background-size: contain;
-}
-
-@media (max-width: 991.98px) {
-    .bg-quote {
-        background-size: cover;
-    }
-}
-
-.team-item {
-    position: relative;
-    margin-bottom: 45px;
-}
-
-.team-text {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: url(../img/team.jpg) bottom center no-repeat;
-    background-size: cover;
-    height: 90px;
-    padding: 0 30px;
-    right: 45px;
-    left: 45px;
-    bottom: -45px;
-    transition: .5s;
-    z-index: 1;
-}
-
-.team-item:hover .team-text {
-    height: 100%;
-    bottom: 0;
-}
-
-.team-social {
-    position: absolute;
-    transition: .1s;
-    transition-delay: .0s;
-    opacity: 0;
-}
-
-.team-item:hover .team-social {
-    transition-delay: .3s;
-    opacity: 1;
-}
-
-.bg-testimonial {
-    background: url(../img/testimonial.jpg) top left no-repeat;
-    background-size: contain;
-}
-
-@media (max-width: 991.98px) {
-    .bg-testimonial {
-        background-size: cover;
-    }
-}
-
-.testimonial-carousel .owl-nav {
-    margin-top: 30px;
-    display: flex;
-    justify-content: start;
-}
-
-.testimonial-carousel .owl-nav .owl-prev,
-.testimonial-carousel .owl-nav .owl-next{
-    position: relative;
-    margin: 0 5px;
-    width: 45px;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #FFFFFF;
-    background: var(--secondary);
-    font-size: 22px;
-    border-radius: 45px;
-    transition: .5s;
-}
-
-.testimonial-carousel .owl-nav .owl-prev:hover,
-.testimonial-carousel .owl-nav .owl-next:hover {
-    color: var(--dark);
-}
-
-.testimonial-carousel .owl-item img {
-    width: 60px;
-    height: 60px;
 }
 
 .bg-artiste-peintre {

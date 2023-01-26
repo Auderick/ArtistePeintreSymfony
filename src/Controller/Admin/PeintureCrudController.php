@@ -5,6 +5,8 @@ namespace App\Controller\Admin;
 use App\Entity\Peinture;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use Vich\UploaderBundle\Form\Type\VichImageType;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
@@ -22,7 +24,6 @@ class PeintureCrudController extends AbstractCrudController
         return Peinture::class;
     }
 
-
     public function configureFields(string $pageName): iterable
     {
         return [
@@ -34,13 +35,20 @@ class PeintureCrudController extends AbstractCrudController
             NumberField::new('prix')->hideOnIndex(),
             BooleanField::new('enVente'),
             BooleanField::new('portfolio'),
-            TextField::new('imageFile')->setFormType(VichImageType::class)->onlyWhenCreating(),
-            ImageField::new('file')->setBasePath('/uploads/peintures')->onlyOnIndex(),
+            TextField::new('imageFile')->setFormType(VichImageType::class)->hideOnIndex(),
+            // ImageField::new('file')->setBasePath('/uploads/peintures')->hideOnIndex(),
+            ImageField::new('file')->setUploadDir('public/uploads/peintures')->hideOnIndex()->hideOnForm(), //remplacé ->onlyOnIndex par hideOnIndex
             SlugField::new('slug')->setTargetFieldName('nom')->hideOnIndex() ,
             AssociationField::new('categorie'),
 
         ];
     }
+    public function configureActions(Actions $actions): Actions
+    {
+        return $actions
+            ->add(Crud::PAGE_EDIT, Action::INDEX);
+    }
+
 
     public function configureCrud(Crud $crud): Crud
     {
