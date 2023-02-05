@@ -24,7 +24,7 @@ $(document).ready(function () {
     $('[data-toggle="popover"]').popover();
 }); */
 
-import './js/main';
+//import './js/main';
 
 // start the Stimulus application
 import './bootstrap';

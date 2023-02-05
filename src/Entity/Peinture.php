@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\File\File;
 use Doctrine\Common\Collections\ArrayCollection;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Vich\UploaderBundle\Mapping\Annotation\UploadableField;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 #[ORM\Entity(repositoryClass: PeintureRepository::class)]
 #[Vich\Uploadable]
@@ -53,6 +54,10 @@ class Peinture
     private ?string $file = null;
 
     #[Vich\UploadableField(mapping: 'peinture_images', fileNameProperty: 'file')]
+    /**
+     * Summary of imageFile
+     * @var File|null
+     */
     private ?File $imageFile = null;
 
     #[ORM\ManyToOne(inversedBy: 'peintures')]
@@ -63,6 +68,7 @@ class Peinture
     private Collection $categorie;
 
     #[ORM\OneToMany(mappedBy: 'peinture', targetEntity: Commentaire::class)]
+    
     private Collection $commentaires;
 
     public function __construct()
@@ -207,7 +213,6 @@ class Peinture
 
         return $this;
     }
-
     /**
      * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
      * of 'UploadedFile' is injected into this setter to trigger the update. If this
@@ -215,16 +220,16 @@ class Peinture
      * must be able to accept an instance of 'File' as the bundle will inject one here
      * during Doctrine hydration.
      *
-    //  * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $imageFile
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $imageFile
      */
-    public function setImageFile(?File $file = null): void //remplacé $imagefile par $file
+    public function setImageFile(?File $imageFile = null): void
     {
-        $this->imageFile = $file;
+        $this->imageFile = $imageFile;
 
-        if (null !== $file) {
+        if (null !== $imageFile) {
             // It is required that at least one field changes if you are using doctrine
             // otherwise the event listeners won't be called and the file is lost
-            $this->createdAt = new \DateTimeImmutable('now');
+            $this->createdAt = new \DateTimeImmutable();
         }
     }
 
@@ -232,6 +237,31 @@ class Peinture
     {
         return $this->imageFile;
     }
+
+    // /**
+    //  * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
+    //  * of 'UploadedFile' is injected into this setter to trigger the update. If this
+    //  * bundle's configuration parameter 'inject_on_load' is set to 'true' this setter
+    //  * must be able to accept an instance of 'File' as the bundle will inject one here
+    //  * during Doctrine hydration.
+    //  *
+    // //  * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $imageFile
+    //  */
+    // public function setImageFile(?File $file = null): void //remplacé $imagefile par $file
+    // {
+    //     $this->imageFile = $file;
+
+    //     if (null !== $file) {
+    //         // It is required that at least one field changes if you are using doctrine
+    //         // otherwise the event listeners won't be called and the file is lost
+    //         $this->createdAt = new \DateTimeImmutable('now');
+    //     }
+    // }
+
+    // public function getimageFile(): ?File
+    // {
+    //     return $this->imageFile;
+    // }
 
    /*  public function setImageFile(File $file = null)
     {
