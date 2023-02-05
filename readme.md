@@ -9,8 +9,6 @@ Peinture est un site internet permettant à un artiste peintre de publier ses oe
 * PHP 8.1
 * Composer
 * Symfony CLI
-* Docker
-* Docker-compose
 * nodejs et npm
 
 Vous pouvez vérifier le pré-requiq (sauf Docker et Docker-compose) avec la commande suivante (de la CLI Symfony) :
@@ -25,8 +23,8 @@ symfony check:requirements
 comoser install
 npm install
 npm run build
-docker-compose up -d
-symfony server:start
+php -S localhost:8000 -t public
+php -S localhost:3000 -t public
 ```
 
 ### Ajouter des données de test
@@ -44,5 +42,5 @@ composer require knplabs/knp-paginator-bundle
 ### Lancer des tests
 
 ```bash
-php bin/ppunit --testdox
+./vendor/bin/phpunit --testdox
 ```
